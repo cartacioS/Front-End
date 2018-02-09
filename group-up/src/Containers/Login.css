@@ -1,5 +1,5 @@
 .Login .lander {
-  padding: 80px 0;
+  padding: 20px 0;
   text-align: center;
 }
 
@@ -10,4 +10,14 @@
 
 .Login .lander p {
   color: #999;
+}
+@media all and (min-width: 480px) {
+  .Login {
+    padding: 50px 0;
+  }
+
+  .Login form {
+    margin: 0 auto;
+    max-width: 320px;
+  }
 }
