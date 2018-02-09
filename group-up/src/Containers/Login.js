@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import {FormGroup, FormControl, ControlLabel } from "react-bootstrap";
+//import { Form, Text } from 'react-form';
 import LoaderButton from "../Components/LoaderButton";
 import "./Login.css";
 
@@ -43,34 +44,35 @@ login(email, password){
   }
 
   render() {
-    return (
-      <div>
+  return (
 
-      <div className="Login">
-      <div className="lander">
+    <div className="Login">
+      <div>
         <h1>GroupUp!</h1>
-        <p>A Groupon User Matching Application</p>
-        </div>
+        <p>Groupon User Matching Application</p>
       </div>
-        <form onSubmit={this.handleSubmit}>
-          <FormGroup controlId="email" bsSize="large">
-            <ControlLabel>Email</ControlLabel>
-            <FormControl
-              autoFocus
-              type="email"
-              value={this.state.email}
-              onChange={this.handleChange}
-            />
-          </FormGroup>
-          <FormGroup controlId="password" bsSize="large">
-            <ControlLabel>Password</ControlLabel>
-            <FormControl
-              value={this.state.password}
-              onChange={this.handleChange}
-              type="password"
-            />
-          </FormGroup>
+      <form onSubmit={this.handleSubmit}>
+        <FormGroup controlId="email" bsSize="large">
+          <ControlLabel>Email</ControlLabel>
+          <FormControl
+            autoFocus
+            placeholder="Enter Email"
+            type="email"
+            value={this.state.email}
+            onChange={this.handleChange}
+          />
+        </FormGroup>
+        <FormGroup controlId="password" bsSize="large">
+          <ControlLabel>Password</ControlLabel>
+          <FormControl
+            value={this.state.password}
+            onChange={this.handleChange}
+            placeholder="Enter Password"
+            type="password"
+          />
+        </FormGroup>
           <LoaderButton
+            id="button"
             block
             bsSize="large"
             disabled={!this.validateForm()}
@@ -78,9 +80,11 @@ login(email, password){
             isLoading={this.state.isLoading}
             text="Login"
             loadingText="Logging in…"
+            componentClass="text"
+            style={{height: 40, width: 400, color:"white", backgroundColor:"#369B00"}}
           />
         </form>
-      </div>
+    </div>
     );
   }
 }

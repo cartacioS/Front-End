@@ -2,22 +2,52 @@
   padding: 20px 0;
   text-align: center;
 }
+p{
+  font-family: "Open Sans", sans-serif;
+  font-size: 16px;
+  color: #333;
+  text-align: center;
+}
+h1, h2, h3, h4, h5, h6 {
+  font-family: "PT Serif", serif;
+  text-align: center;
+}
+select.form-control,
+textarea.form-control,
+input.form-control {
+  font-size: 16px;
+  font-family: "Open Sans", sans-serif;
+  text-align: left;
+  align-items: center;
+}
+input[type=file] {
+  width: 100%;
+  align-items: center;
+}
 
 .Login .lander h1 {
   font-family: "Open Sans", sans-serif;
   font-weight: 600;
+  align-items: center;
 }
 
 .Login .lander p {
   color: #999;
 }
-@media all and (min-width: 480px) {
+@media all and (min-width: 450px) {
   .Login {
     padding: 50px 0;
   }
 
   .Login form {
+    font-family: "Open Sans", sans-serif;
     margin: 0 auto;
-    max-width: 320px;
+    max-width: 400px;
+    align-items: center;
   }
+}
+
+.LoginLabels{
+  font-family: "Open Sans", sans-serif;
+  font-size: 30px;
 }
