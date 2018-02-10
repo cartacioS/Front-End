@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import {FormGroup, FormControl, ControlLabel } from "react-bootstrap";
 //import { Form, Text } from 'react-form';
+import {Button} from 'react-bootstrap';
 import LoaderButton from "../Components/LoaderButton";
 import "./Login.css";
 
@@ -79,10 +80,13 @@ login(email, password){
             isLoading={this.state.isLoading}
             text="Login"
             loadingText="Logging in…"
-            
             style={{ color:"white", backgroundColor:"#369B00"}}
           />
         </form>
+        <div style={{textAlign:'center', padding:40}}>
+        <p style={{fontSize:12}}>Not registered? Register Now!</p>
+        <Button className="regButton">Register</Button>
+        </div>
     </div>
     );
   }
