@@ -72,7 +72,6 @@ login(email, password){
           />
         </FormGroup>
           <LoaderButton
-            id="button"
             block
             bsSize="large"
             disabled={!this.validateForm()}
@@ -80,8 +79,8 @@ login(email, password){
             isLoading={this.state.isLoading}
             text="Login"
             loadingText="Logging in…"
-            componentClass="text"
-            style={{height: 40, width: 400, color:"white", backgroundColor:"#369B00"}}
+            
+            style={{ color:"white", backgroundColor:"#369B00"}}
           />
         </form>
     </div>
