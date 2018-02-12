@@ -53,7 +53,7 @@ class Register extends React.Component {
     e.preventDefault();
     const errors = this.validateData();
     if (isEmpty(errors)) {
-      console.log("We're good");
+      this.props.history.push("/");
     } else {
       this.setState({ errors });
     }

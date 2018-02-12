@@ -8,7 +8,7 @@ class App extends Component {
   render() {
     return (
       <div className="App container">
-        <Routes />
+        <Routes location={this.props.location} />
       </div>
     );
   }

@@ -3,9 +3,9 @@ import { Route, Switch } from "react-router-dom";
 import Login from "./Containers/Login";
 import Register from "./Containers/Register";
 
-export default () => (
+export default ({ location }) => (
   <Switch>
-    <Route path="/" exact component={Login} />
-    <Route path="/register" exact component={Register} />
+    <Route location={location} path="/" exact component={Login} />
+    <Route location={location} path="/register" exact component={Register} />
   </Switch>
 );
