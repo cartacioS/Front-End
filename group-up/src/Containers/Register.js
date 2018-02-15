@@ -1,4 +1,5 @@
 import React from "react";
+import { connect } from "react-redux";
 import { isEmpty } from "lodash";
 import { isEmail } from "validator";
 import { FormGroup, FormControl, ControlLabel } from "react-bootstrap";
@@ -182,4 +183,4 @@ class Register extends React.Component {
   }
 }
 
-export default Register;
+export default connect(null, null)(Register);
