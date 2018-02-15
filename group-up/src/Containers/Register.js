@@ -101,7 +101,6 @@ class Register extends React.Component {
           >
             <ControlLabel>Last Name</ControlLabel>
             <FormControl
-              autoFocus
               placeholder="Enter Your Last Name"
               type="input"
               onChange={this.handleChange}
@@ -117,7 +116,6 @@ class Register extends React.Component {
           >
             <ControlLabel>Zip Code</ControlLabel>
             <FormControl
-              autoFocus
               placeholder="Enter Your Zip Code"
               type="input"
               onChange={this.handleChange}
@@ -133,7 +131,6 @@ class Register extends React.Component {
           >
             <ControlLabel>Email</ControlLabel>
             <FormControl
-              autoFocus
               placeholder="Enter Email"
               type="email"
               onChange={this.handleChange}
