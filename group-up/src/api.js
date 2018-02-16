@@ -1,5 +1,6 @@
 import axios from "axios";
 
+// API object that gives an interface to our backend using axios get & posting
 const api = {
   auth: {
     registerAccount: (email, first_name, last_name, password, zip_code) =>
