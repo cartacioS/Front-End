@@ -7,8 +7,9 @@ import { isEmail } from "validator";
 import { registerAccount } from "../actions/auth";
 import LoaderButton from "../Components/LoaderButton";
 
-const isValidZip = zipCode => /(^\d{5}$)|(^\d{5}-\d{4}$)/.test(zipCode);
-
+// match only 5 digits
+const isValidZip = zipCode => /(^\d{5}$)/.test(zipCode);
+// This needs to be decomposed into separate components. Too much complexity
 class Register extends React.Component {
   state = {
     email: "",
@@ -27,6 +28,7 @@ class Register extends React.Component {
     });
   };
 
+  // disgusting
   validateData = () => {
     const errors = {};
     if (this.state.email === "") errors.email = "This field is required";
@@ -58,6 +60,8 @@ class Register extends React.Component {
     const { email, password, zipCode, firstName, lastName } = this.state;
     if (isEmpty(errors)) {
       this.setState({ isLoading: true });
+
+      // thunk action being dispatched so it returns a promise
       this.props
         .registerAccount({
           email,
@@ -196,4 +200,5 @@ Register.propTypes = {
   }).isRequired
 };
 
+// Connecting our dispatch to props of register component
 export default connect(null, { registerAccount })(Register);
