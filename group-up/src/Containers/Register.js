@@ -1,8 +1,10 @@
 import React from "react";
+import { PropTypes } from "prop-types";
+import { FormGroup, FormControl, ControlLabel } from "react-bootstrap";
 import { connect } from "react-redux";
 import { isEmpty } from "lodash";
 import { isEmail } from "validator";
-import { FormGroup, FormControl, ControlLabel } from "react-bootstrap";
+import { registerAccount } from "../actions/auth";
 import LoaderButton from "../Components/LoaderButton";
 
 const isValidZip = zipCode => /(^\d{5}$)|(^\d{5}-\d{4}$)/.test(zipCode);
@@ -53,24 +55,28 @@ class Register extends React.Component {
     // don't post the foirm plz
     e.preventDefault();
     const errors = this.validateData();
+    const { email, password, zipCode, firstName, lastName } = this.state;
     if (isEmpty(errors)) {
-      this.props.history.push("/");
+      this.setState({ isLoading: true });
+      this.props
+        .registerAccount({
+          email,
+          password,
+          zipCode,
+          firstName,
+          lastName
+        })
+        .then(() => {
+          this.props.history.push("/");
+          this.setState({ isLoading: false });
+        });
     } else {
-      this.setState({ errors });
+      this.setState({ errors, isLoading: false });
     }
   };
 
   render() {
-    const {
-      email,
-      password,
-      passwordConfirm,
-      zipCode,
-      isLoading,
-      firstName,
-      lastName,
-      errors
-    } = this.state;
+    const { isLoading, errors } = this.state;
 
     return (
       <div className="Register">
@@ -183,4 +189,11 @@ class Register extends React.Component {
   }
 }
 
-export default connect(null, null)(Register);
+Register.propTypes = {
+  registerAccount: PropTypes.func.isRequired,
+  history: PropTypes.shape({
+    push: PropTypes.func.isRequired
+  }).isRequired
+};
+
+export default connect(null, { registerAccount })(Register);

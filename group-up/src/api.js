@@ -2,7 +2,16 @@ import axios from "axios";
 
 const api = {
   auth: {
-    register: data => axios.post("some/url", { data }).then(res => res.data)
+    registerAccount: (email, first_name, last_name, password, zip_code) =>
+      axios
+        .post("users/create", {
+          email,
+          first_name,
+          last_name,
+          password,
+          zip_code
+        })
+        .then(res => res.data)
   }
 };
 
