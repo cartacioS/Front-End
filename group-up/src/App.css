@@ -1,7 +1,6 @@
 .App {
-  margin-top: 15px;
-}
-
-.App .navbar-brand {
-  font-weight: bold;
+  margin-top: 0px;
+  margin: 0px;
+  padding: 0px;
+  float: center;
 }
