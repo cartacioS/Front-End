@@ -5,10 +5,21 @@
   float: center;
 }
 
+#HeaderBar {
+   asdbackground-color: #369B00;
+   position: fixed; /* Make HB always visible */
+   padding: 0;
+   padding-bottom: 65px;
+   margin-bottom: 200px;
+   width: 100%;
+   overflow: hidden;
+}
+
 #Logo {
-   color:yellow;
+   color:white;
+   font-size: 18px;
    padding: 0px;
-   height: 50%;
+
 }
 
 #placeholderSearch {
@@ -36,4 +47,30 @@ input[type=search] {
    width: 100%;
    box-sizing: border-box;
    position: relative;
+}
+
+#logOut {
+   text-decoration: none;
+   list-style-type: none;
+   color: white;
+   font-weight: 400;
+   font-size: 18px;
+   float: right;
+}
+
+a {
+   color: white;
+}
+a:link {
+   text-decoration: none;
+   list-style-type: none;
+   color: white;
+   font-weight: 400;
+   font-size: 18px;
+   float: right;
+}
+
+a:hover {
+   text-decoration: none;
+   color: #A9D18C;
 }

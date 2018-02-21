@@ -10,21 +10,21 @@ class App extends Component {
     return (
 
       <div className="App container">
-         <div className="HeaderBar">
+         <div id="HeaderBar">
             <Navbar fluid
                style={{
                   backgroundColor:"#369B00",
-                  width:"100%",
-                  display: "block",
-                  position: "fixed",
-                  height: "3%",
-                  padding:"0%",
+                  //width:"100%",
+                  //display: "block",
+                  //position: "fixed",
+                  height: "10%",
+                  //padding:"0%",
                }}>
 
                <Navbar.Header>
                   <Navbar.Brand>
-
-                     <div id="Logo"><img src="favicon_package_v0.16/favicon.ico" alt="GroupUp"/></div>
+                     <div id="Logo"><a href="#"><img
+                        src="favicon_package_v0.16/favicon.ico" alt="GroupUp"/></a></div>
                   </Navbar.Brand>
                </Navbar.Header>
 
@@ -34,9 +34,11 @@ class App extends Component {
                   </label>
                </form>
 
-               <Nav pullRight>
-                  <NavItem href="/">Log out</NavItem>
-               </Nav>
+
+               <div id="logOut">
+                  <a href="#">Log out</a>
+               </div>
+
 
             </Navbar>
          </div>
