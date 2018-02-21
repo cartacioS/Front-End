@@ -11,24 +11,26 @@ class App extends Component {
 
       <div className="App container">
          <div className="HeaderBar">
-            <Navbar fluid collapseOnSelect
+            <Navbar fluid
                style={{
                   backgroundColor:"#369B00",
                   width:"100%",
                   display: "block",
                   position: "fixed",
                   height: "3%",
+                  padding:"0%",
                }}>
 
                <Navbar.Header>
                   <Navbar.Brand>
-                     <div className="Logo">Groupup</div>
+
+                     <div id="Logo"><img src="favicon_package_v0.16/favicon.ico" alt="GroupUp"/></div>
                   </Navbar.Brand>
                </Navbar.Header>
 
                <form>
-                  <label>
-                     <input name="searchBox" type="text" placeholder="Search"/>
+                  <label id="placeholderSearch">
+                     <input name="search" type="search" placeholder="Search"/>
                   </label>
                </form>
 

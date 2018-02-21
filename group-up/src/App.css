@@ -4,3 +4,36 @@
   padding: 0px;
   float: center;
 }
+
+#Logo {
+   color:yellow;
+   padding: 0px;
+   height: 50%;
+}
+
+#placeholderSearch {
+   border: none;
+   background-color: transparent;
+   width: 500px;
+   border-color: #80bdff;
+
+
+}
+
+input[type=search] {
+   border: none;
+   background-color: white;
+   border-bottom: 2px solid red;
+   font-weight: 400;
+   font-size: 18px;
+   z-index: 2;
+   padding: 0 0 0 10px;
+   border: 0;
+   font-family: "Open Sans", sans-serif;
+   text-align: left;
+   align-items: center;
+   height: 35px;
+   width: 100%;
+   box-sizing: border-box;
+   position: relative;
+}
