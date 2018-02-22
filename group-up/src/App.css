@@ -1,7 +1,70 @@
 .App {
-  margin-top: 15px;
+  margin-top: 0px;
+  padding: 0px;
+  float: center;
 }
 
-.App .navbar-brand {
-  font-weight: bold;
+#HeaderBar {
+   position: fixed; /* Make HB always visible */
+   padding: 0;
+   padding-bottom: 65px;
+   margin-bottom: 200px;
+   width: 100%;
+   overflow: hidden;
+}
+
+#Logo {
+   color:white;
+   font-size: 18px;
+   padding: 0px;
+}
+
+#placeholderSearch {
+   border: none;
+   background-color: transparent;
+   width: 500px;
+   border-color: #80bdff;
+}
+
+input[type=search] {
+   background-color: white;
+   font-weight: 400;
+   font-size: 18px;
+   z-index: 2;
+   padding: 0 0 0 10px;
+   border: 0;
+   font-family: "Open Sans", sans-serif;
+   text-align: left;
+   align-items: center;
+   height: 35px;
+   width: 100%;
+   box-sizing: border-box;
+   position: relative;
+}
+
+#logOut {
+   text-decoration: none;
+   list-style-type: none;
+   color: white;
+   font-weight: 400;
+   font-size: 18px;
+   float: right;
+}
+
+a {
+   color: white;
+}
+
+a:link {
+   text-decoration: none;
+   list-style-type: none;
+   color: white;
+   font-weight: 400;
+   font-size: 18px;
+   float: right;
+}
+
+a:hover {
+   text-decoration: none;
+   color: #A9D18C;
 }
