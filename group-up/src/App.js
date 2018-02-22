@@ -9,16 +9,12 @@ class App extends Component {
   render() {
     return (
 
-      <div className="App container">
+      <div className="Appcontainer">
          <div id="HeaderBar">
             <Navbar fluid
                style={{
                   backgroundColor:"#369B00",
-                  //width:"100%",
-                  //display: "block",
-                  //position: "fixed",
                   height: "10%",
-                  //padding:"0%",
                }}>
 
                <Navbar.Header>

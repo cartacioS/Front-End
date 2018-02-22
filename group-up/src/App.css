@@ -1,12 +1,10 @@
 .App {
   margin-top: 0px;
-  margin: 0px;
   padding: 0px;
   float: center;
 }
 
 #HeaderBar {
-   asdbackground-color: #369B00;
    position: fixed; /* Make HB always visible */
    padding: 0;
    padding-bottom: 65px;
@@ -19,7 +17,6 @@
    color:white;
    font-size: 18px;
    padding: 0px;
-
 }
 
 #placeholderSearch {
@@ -27,14 +24,10 @@
    background-color: transparent;
    width: 500px;
    border-color: #80bdff;
-
-
 }
 
 input[type=search] {
-   border: none;
    background-color: white;
-   border-bottom: 2px solid red;
    font-weight: 400;
    font-size: 18px;
    z-index: 2;
@@ -61,6 +54,7 @@ input[type=search] {
 a {
    color: white;
 }
+
 a:link {
    text-decoration: none;
    list-style-type: none;
