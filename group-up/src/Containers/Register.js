@@ -83,7 +83,7 @@ class Register extends React.Component {
     const { isLoading, errors } = this.state;
 
     return (
-      <div className="Register">
+      <div className="Login">
         <div>
           <h1>GroupUp!</h1>
           <p>Groupon User Matching Application</p>
