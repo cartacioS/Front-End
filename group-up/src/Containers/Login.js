@@ -1,7 +1,5 @@
 import React, { Component } from "react";
 import {FormGroup, FormControl, ControlLabel } from "react-bootstrap";
-//import { Form, Text } from 'react-form';
-import {Button} from 'react-bootstrap';
 import LoaderButton from "../Components/LoaderButton";
 import "./Login.css";
 
@@ -17,7 +15,7 @@ export default class Login extends Component {
   }
 
   validateForm() {
-    return this.state.email.length > 0 && this.state.password.length > 0;
+    return this.state.email.length > 0 && this.state.password.length > 7;
   }
 
 login(email, password){
