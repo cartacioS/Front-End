@@ -1,0 +1,16 @@
+a {
+    color: white;
+    font-size: 12px;
+    display: block;
+ }
+ 
+ a:link {
+    color: white;
+    font-weight: 400;
+    font-size: 12px;
+ }
+ 
+ a:hover {
+    text-decoration: none;
+    color: #A9D18C;
+ }

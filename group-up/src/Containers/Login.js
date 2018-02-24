@@ -81,11 +81,25 @@ login(email, password){
             text="Login"
             loadingText="Logging in…"
             style={{ color:"white", backgroundColor:"#369B00"}}
+            href="listingspage"
           />
         </form>
         <div style={{textAlign:'center', padding:40}}>
         <p style={{fontSize:12}}>Not registered? Register Now!</p>
-        <Button className="regButton">Register</Button>
+        <form>
+        <FormGroup>
+        <LoaderButton 
+        block
+        bsSize="large"
+        type="submit"
+        isLoading={this.state.isLoading}
+        text="Register"
+        loadingText="Redirecting…"
+        style={{ color:"white", backgroundColor:"#369B00"}}
+        href="register"
+        />
+        </FormGroup>
+        </form>
         </div>
     </div>
     );

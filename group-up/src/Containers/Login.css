@@ -2,6 +2,7 @@
   padding: 20px 0;
   text-align: center;
 }
+
 p{
   font-family: "Open Sans", sans-serif;
   font-size: 16px;
@@ -36,7 +37,7 @@ input[type=file] {
 }
 @media all and (min-width: 450px) {
   .Login {
-    padding: 50px 0;
+    padding: 110px 0;
   }
 
   .Login form {
@@ -52,7 +53,6 @@ input[type=file] {
   font-size: 12px;
   color: white;
   background-color: #369B00;
-
   height: 30px;
   width: 400px;
 }
@@ -60,4 +60,5 @@ input[type=file] {
 .regButton:hover{
   color:white;
   background-color: #87BF5D;
+  
 }

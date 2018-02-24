@@ -1,7 +1,8 @@
 import React, { Component } from "react";
-import {Navbar, Nav, NavItem} from "react-bootstrap";
+import {Navbar} from "react-bootstrap";
 import Routes from "./Routes";
 import "./App.css";
+import "./Components/HeaderBar.css";
 
 class App extends Component {
   state = {};
@@ -19,7 +20,7 @@ class App extends Component {
 
                <Navbar.Header>
                   <Navbar.Brand>
-                     <div id="Logo"><a href="#"><img
+                     <div id="Logo"><a href=""><img
                         src="favicon_package_v0.16/favicon.ico" alt="GroupUp"/></a></div>
                   </Navbar.Brand>
                </Navbar.Header>
@@ -32,7 +33,7 @@ class App extends Component {
 
 
                <div id="logOut">
-                  <a href="#">Log out</a>
+                  <a href="">Log out</a>
                </div>
 
 
