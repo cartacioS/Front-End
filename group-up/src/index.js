@@ -30,7 +30,8 @@ ReactDOM.render((
 
    <Router>
    <div>
-      <Route exact path="/ListingsPagec" component={loggedIn}></Route>
+      <Route exact path="/listingspage" component={loggedIn}></Route>
+      <Route exact path="/register" component={EmptyLayout}></Route>
       <Route exact path="/"  component={EmptyLayout}></Route>
       <Provider store={store}>
          <Route component={App} />

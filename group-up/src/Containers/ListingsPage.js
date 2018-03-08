@@ -5,8 +5,8 @@ export default class ListingsPage extends Component {
 
      <div className="ListingsPage">
       <div>
-         <h1>GroupUp!</h1>
-         <p>Groupon User Matching Application</p>
+         <h1>TEST!</h1>
+         <p>Change this</p>
       </div>
      </div>
      );
