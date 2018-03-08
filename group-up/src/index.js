@@ -12,8 +12,8 @@ import registerServiceWorker from "./registerServiceWorker";
 import "./index.css";
 
 
-import loggedIn from './layouts/logged_in.jsx';
-import EmptyLayout from './layouts/blank.jsx';
+import navBarLoggedIn from './Components/navBarLoggedIn.js';
+import navBarBlank from './Components/navBarBlank.js';
 
 import Login from "./Containers/Login";
 
@@ -30,9 +30,9 @@ ReactDOM.render((
 
    <Router>
    <div>
-      <Route exact path="/listingspage" component={loggedIn}></Route>
-      <Route exact path="/register" component={EmptyLayout}></Route>
-      <Route exact path="/"  component={EmptyLayout}></Route>
+      <Route exact path="/listingspage" component={navBarLoggedIn}></Route>
+      <Route exact path="/register" component={navBarBlank}></Route>
+      <Route exact path="/"  component={navBarBlank}></Route>
       <Provider store={store}>
          <Route component={App} />
       </Provider>
