@@ -12,8 +12,8 @@ import registerServiceWorker from "./registerServiceWorker";
 import "./index.css";
 
 
-import navBarLoggedIn from './Components/navBarLoggedIn.jsx';
-import navBarBlank from './Components/navBarBlank.jsx';
+import navBarLoggedIn from './Components/navBarLoggedIn.js';
+import navBarBlank from './Components/navBarBlank.js';
 
 import Login from "./Containers/Login";
 
