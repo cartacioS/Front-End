@@ -14,7 +14,7 @@ class EmptyLayout extends Component {
 
                <Navbar.Header>
                   <Navbar.Brand>
-                     <div id="Logo"><a href=""><img
+                     <div id="Logo"><a href="/"><img
                         src="favicon_package_v0.16/favicon.ico" alt="GroupUp"/></a></div>
                   </Navbar.Brand>
                </Navbar.Header>

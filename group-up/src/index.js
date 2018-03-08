@@ -14,7 +14,7 @@ import "./index.css";
 
 import loggedIn from './layouts/logged_in.jsx';
 import EmptyLayout from './layouts/blank.jsx';
-import Routes from "./Routes";
+
 import Login from "./Containers/Login";
 
 import Register from "./Containers/Register";
@@ -30,14 +30,8 @@ ReactDOM.render((
 
    <Router>
    <div>
-      <Route  path="/register" component={loggedIn}>
-        <Route path="/register" component={Register} />
-      </Route>
-        <Route path="/home" component={EmptyLayout}>
-          <Route path="/home" component={Login} />
-        </Route>
-
-
+      <Route exact path="/ListingsPagec" component={loggedIn}></Route>
+      <Route exact path="/"  component={EmptyLayout}></Route>
       <Provider store={store}>
          <Route component={App} />
       </Provider>
