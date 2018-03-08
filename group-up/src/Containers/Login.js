@@ -86,7 +86,7 @@ login(email, password){
         <p style={{fontSize:12}}>Not registered? Register Now!</p>
         <form>
         <FormGroup>
-        <LoaderButton 
+        <LoaderButton
         block
         bsSize="large"
         type="submit"

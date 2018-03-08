@@ -3,9 +3,9 @@
   padding: 0px;
   float: center;
 }
-
+/*
 #HeaderBar {
-   position: fixed; /* Make HB always visible */
+   position: fixed; /* Make HB always visible
    padding: 0;
    padding-bottom: 65px;
    margin-bottom: 200px;
@@ -50,4 +50,4 @@ input[type=search] {
    font-size: 18px;
    float: right;
 }
-
+*/
