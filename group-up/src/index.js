@@ -11,15 +11,8 @@ import App from "./App";
 import registerServiceWorker from "./registerServiceWorker";
 import "./index.css";
 
-
 import navBarLoggedIn from './Components/navBarLoggedIn.js';
 import navBarBlank from './Components/navBarBlank.js';
-
-import Login from "./Containers/Login";
-
-import Register from "./Containers/Register";
-
-
 
 const store = createStore(
   rootReducer,

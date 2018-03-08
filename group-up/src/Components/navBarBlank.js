@@ -6,13 +6,13 @@ class navBarBlank extends Component {
     return (
       <div className="Appcontainer">
          <div id="HeaderBar">
-            <Navbar
+            <Navbar inverse fluid
                style={{
                   backgroundColor:"#369B00",
                   height: "10%",
                }}>
 
-               <Navbar.Header pullLeft>
+               <Navbar.Header>
                   <Navbar.Brand>
                      <div id="Logo"><a href="/"><img
                         src="favicon_package_v0.16/favicon.ico" alt="GroupUp"/></a></div>
