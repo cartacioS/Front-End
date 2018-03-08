@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 import {Navbar} from "react-bootstrap";
 
-class loggedIn extends Component {
+class navBarLoggedIn extends Component {
    render() {
       return (
          <div className="Appcontainer">
@@ -36,4 +36,4 @@ class loggedIn extends Component {
    }
 }
 
-export default loggedIn;
+export default navBarLoggedIn;

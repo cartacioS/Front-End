@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import {Navbar} from "react-bootstrap";
 
-class EmptyLayout extends Component {
+class navBarBlank extends Component {
   render() {
     return (
       <div className="Appcontainer">
@@ -25,4 +25,4 @@ class EmptyLayout extends Component {
     );
   }
 }
-export default EmptyLayout;
+export default navBarBlank;
