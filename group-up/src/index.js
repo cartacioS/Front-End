@@ -23,6 +23,7 @@ ReactDOM.render((
 
    <Router>
    <div>
+   <Route exact path="/requestpage" component={navBarLoggedIn}></Route>
       <Route exact path="/listingspage" component={navBarLoggedIn}></Route>
       <Route exact path="/register" component={navBarBlank}></Route>
       <Route exact path="/"  component={navBarBlank}></Route>

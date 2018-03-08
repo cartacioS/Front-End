@@ -1,17 +1,12 @@
 import React, { Component } from "react";
 import { Button } from "react-bootstrap";
 import "../Components/RequestButton.css";
-export default class ListingsPage extends Component {
+export default class Request extends Component {
    render() {
    return (
 
      <div className="ListingsPage">
-      <div>
-        <Button className="RequestButton" href="requestform">
-            Click me!!!!!
-
-        </Button>
-      </div>
+        <h1>I am a heading</h1>
      </div>
      );
    }
