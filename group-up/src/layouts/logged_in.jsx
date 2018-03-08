@@ -26,7 +26,7 @@ class loggedIn extends Component {
                   </form>
 
                   <div id="logOut">
-                     <a href="">Log out</a>
+                     <a href="/">Log out</a>
                   </div>
 
                </Navbar>
