@@ -1,5 +1,8 @@
 .RequestButton {
-    padding: 80px;
+    padding: 10px;
+    position: absolute;
+    top: 12%;
+    left: 79%;
     font-family: "Open Sans", sans-serif;
     font-size: 14px;
     color: white;

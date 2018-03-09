@@ -8,7 +8,7 @@ export default class ListingsPage extends Component {
      <div className="ListingsPage">
       <div>
         <Button className="RequestButton" href="requestform">
-            Click me!!!!!
+            Create A Request
 
         </Button>
       </div>
