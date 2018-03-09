@@ -12,7 +12,9 @@ const api = {
           password,
           zipCode
         })
-        .then(res => res.data)
+        .then(res => res.data),
+    login: (email, password) =>
+      axios.post("users/login", { email, password }).then(res => res.data)
   }
 };
 
