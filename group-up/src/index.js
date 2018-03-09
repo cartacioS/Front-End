@@ -11,7 +11,6 @@ import App from "./App";
 import registerServiceWorker from "./registerServiceWorker";
 import "./index.css";
 
-
 import navBarLoggedIn from './Components/navBarLoggedIn.js';
 import navBarBlank from './Components/navBarBlank.js';
 
