@@ -1,5 +1,6 @@
 import React, {Component} from 'react';
 import {Navbar} from "react-bootstrap";
+import "./HeaderBar.css";
 
 class navBarLoggedIn extends Component {
    render() {
@@ -10,6 +11,7 @@ class navBarLoggedIn extends Component {
                   style={{
                      backgroundColor:"#369B00",
                      height: "10%",
+                     overflow: "hidden",
                   }}>
 
                   <Navbar.Header>
