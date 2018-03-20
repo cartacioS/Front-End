@@ -1,15 +1,37 @@
 import React, { Component } from "react";
 import { Button, FormGroup, ControlLabel, FormControl } from "react-bootstrap";
 import "../Components/RequestButton.css";
+import LoaderButton from "../Components/LoaderButton";
+import "./RequestForm.css";
 export default class Request extends Component {
-   render() {
+   
+    constructor(props) {
+        super(props);
+
+        this.state = {
+            isLoading: false,
+            title: "",
+            expDate: "",
+            groupSize: "",
+            countNeeded: "",
+            description: ""
+        };
+    }
+
+   validateForm() {
+        return this.state.title.length > 0;
+   }
+
+    render() {
    return (
 
-     <div className="ListingsPage">
+     <div className="Request">
+        <h1> Create Request </h1>
         <form> 
                 <FormGroup controlId="title" bsSize="large">
                     <ControlLabel> Request Title </ControlLabel>
                         <FormControl
+                            controlId="title"
                             autofocus
                             placeholder="Enter Request Title"
                             type="text"
@@ -18,6 +40,7 @@ export default class Request extends Component {
                 <FormGroup controlId="expirationDate" bsSize="large">
                     <ControlLabel> Expiration Date </ControlLabel>
                         <FormControl
+
                             autofocus
                             placeholder="Enter Expiration Date"
                             type="text"
@@ -46,8 +69,18 @@ export default class Request extends Component {
                             placeholder="Enter description"
                             type="text"
                         />
-                </FormGroup>
-                <Button> Submit </Button>
+                </FormGroup> 
+                    <LoaderButton
+                    block
+                    bsSize="large"
+                    disabled={!this.validateForm()}
+                    type="submit"
+                    isLoading={this.state.isLoading}
+                    text="Create"
+                    loadingText="Creating Request..."
+                    style={{ color:"white", backgroundColor:"#369B00"}}
+                    href="listings"
+                 />
         </form>
 
      </div>
