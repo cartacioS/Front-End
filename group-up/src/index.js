@@ -26,6 +26,7 @@ ReactDOM.render((
    <Route exact path="/requestpage" component={navBarLoggedIn}></Route>
       <Route exact path="/listingspage" component={navBarLoggedIn}></Route>
       <Route exact path="/register" component={navBarBlank}></Route>
+      <Route exact path="/RequestForm"  component={navBarBlank}></Route>
       <Route exact path="/"  component={navBarBlank}></Route>
       <Provider store={store}>
          <Route component={App} />
