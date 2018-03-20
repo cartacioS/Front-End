@@ -16,7 +16,7 @@ class navBarLoggedIn extends Component {
 
                   <Navbar.Header>
                      <Navbar.Brand>
-                        <div id="Logo"><a href="/listingspage"><img
+                        <div id="Logo"><a href="/listings"><img
                            src="favicon_package_v0.16/favicon.ico"alt="GroupUp"/></a></div>
                      </Navbar.Brand>
                   </Navbar.Header>
