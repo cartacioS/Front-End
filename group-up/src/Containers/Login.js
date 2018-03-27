@@ -46,7 +46,7 @@ class Login extends Component {
         .login({ email, password })
         .then(() => {
           this.setState({ isLoading: false });
-          this.props.history.push("/ListingsPage");
+          this.props.history.push("/listings");
         })
         // TODO: do something actually pls
         .catch(() => window.console.log("yo"));

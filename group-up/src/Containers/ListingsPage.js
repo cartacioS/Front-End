@@ -1,18 +1,20 @@
 import React, { Component } from "react";
 import { Button } from "react-bootstrap";
 import "../Components/RequestButton.css";
-export default class ListingsPage extends Component {
-   render() {
-   return (
 
-     <div className="ListingsPage">
-      <div>
-        <Button className="RequestButton" href="request">
+class ListingsPage extends Component {
+  state = {};
+  render() {
+    return (
+      <div className="ListingsPage">
+        <div>
+          <Button className="RequestButton" href="request">
             Create A Request
-
-        </Button>
+          </Button>
+        </div>
       </div>
-     </div>
-     );
-   }
+    );
+  }
 }
+
+export default ListingsPage;
