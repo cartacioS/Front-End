@@ -1,6 +1,6 @@
 import React from "react";
 import { Card, Container } from "semantic-ui-react";
-import "semantic-ui-css/semantic.min.css";
+import "../../node_modules/semantic-ui-css/semantic.min.css";
 
 const RequestCard = ({
   postedBy,
