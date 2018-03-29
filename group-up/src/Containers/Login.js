@@ -90,7 +90,7 @@ class Login extends Component {
           <LoaderButton
             block
             bsSize="large"
-            // disabled={!this.validateForm()}
+           disabled={!this.validateForm()}
             type="submit"
             isLoading={this.state.isLoading}
             text="Login"
