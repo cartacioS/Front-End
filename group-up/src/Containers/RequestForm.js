@@ -4,6 +4,9 @@ import {isEmpty} from "lodash";
 import "../Components/RequestButton.css";
 import LoaderButton from "../Components/LoaderButton";
 import "./RequestForm.css";
+import DatePicker from 'react-datepicker';
+import moment from 'moment';
+import 'react-datepicker/dist/react-datepicker.css';
 class Request extends React.Component {
    
     state = {
@@ -27,6 +30,21 @@ class Request extends React.Component {
        if(this.state.title === ""){
            errors.title = "This field is required.";
        }
+        if(this.state.expDate === ""){
+            errors.expDate = "This field is required.";
+        }
+        if(this.state.groupSize === ""){
+            errors.groupSize = "This field is required.";
+        }
+        else if(this.state.groupSize < 2){
+            errors.groupSize = "Please enter a group size of at least 2.";
+        }
+        if(this.state.countNeeded === ""){
+            errors.countNeeded = "This field is required.";
+        }
+        else if(this.state.countNeeded < 1 ) {
+            errors.countNeeded = "Please enter a group size of at least 1.";
+        }
         return errors;
    }
 
@@ -61,7 +79,6 @@ class Request extends React.Component {
                     bsSize="large"
                     validationState = {errors.title ? "error" : null}
                     >
-
                     <ControlLabel> Request Title </ControlLabel>
                         <FormControl
                             autoFocus
@@ -73,37 +90,61 @@ class Request extends React.Component {
                         )}
                     { console.log(this.state.title)}
                 </FormGroup>
-                <FormGroup controlId="expirationDate" bsSize="large">
+                <FormGroup 
+                    controlId="expDate"
+                    bsSize="large"
+                    validationState = {errors.expDate ? "error" : null}
+                    >
                     <ControlLabel> Expiration Date </ControlLabel>
                         <FormControl
-
                             autoFocus
                             placeholder="Enter Expiration Date"
-                            type="text"
+                            type="input"
+                            onChange = {this.handleChange}
                         />
+                        {!!errors.expDate && (<ControlLabel>{errors.expDate} </ControlLabel>
+                        )}
+                    { console.log(this.state.expDate) }
                 </FormGroup>
-                <FormGroup controlId="groupSize" bsSize="large">
+                <FormGroup 
+                    controlId="groupSize"
+                    bsSize="large"
+                    validationState = {errors.groupSize ? "error" : null}
+                    >
                     <ControlLabel> Group Size </ControlLabel>
                         <FormControl
                             autoFocus
                             placeholder="Enter Group Size"
-                            type="text"
+                            type="input"
+                            onChange = {this.handleChange}
                         />
+                        {!!errors.groupSize && (<ControlLabel>{errors.groupSize} </ControlLabel>
+                        )}
                 </FormGroup>
-                <FormGroup controlId="countNeeded" bsSize="large">
+                <FormGroup
+                    controlId="countNeeded"
+                    bsSize="large"
+                    validationState = {errors.countNeeded ? "error" : null}
+                    >
                     <ControlLabel> Count Needed </ControlLabel>
                         <FormControl
                             autoFocus
                             placeholder="Enter Count Needed"
-                            type="text"
+                            type="input"
+                            onChange = {this.handleChange}
                         />
+                        {!!errors.countNeeded && (<ControlLabel>{errors.countNeeded} </ControlLabel>
+                        )}
                 </FormGroup>
-                <FormGroup controlId="description" bsSize="large">
-                    <ControlLabel> Description </ControlLabel>
+                <FormGroup
+                    controlId="description"
+                    bsSize="large"
+                    >
+                    <ControlLabel> Description (Optional) </ControlLabel>
                         <FormControl
                             autoFocus
                             placeholder="Enter description"
-                            type="text"
+                            type="input"
                         />
                 </FormGroup> 
                     <LoaderButton
