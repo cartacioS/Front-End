@@ -11,7 +11,7 @@ class Request extends React.Component {
    
     state = {
         title: "",
-        expDate: "",
+        expDate: moment(),
         groupSize: "",
         countNeeded: "",
         description: "",
@@ -24,6 +24,12 @@ class Request extends React.Component {
             [e.target.id]: e.target.value
         });
     };    
+
+    handleDateChange = date => {
+        this.setState({
+            expDate: date
+        });
+    }
 
    validateData() {
        const errors = {};
@@ -96,11 +102,10 @@ class Request extends React.Component {
                     validationState = {errors.expDate ? "error" : null}
                     >
                     <ControlLabel> Expiration Date </ControlLabel>
-                        <FormControl
-                            autoFocus
-                            placeholder="Enter Expiration Date"
-                            type="input"
-                            onChange = {this.handleChange}
+                        <DatePicker
+                            selected = {this.state.expDate}
+                            onChange = {this.handleDateChange}
+                            readOnly = {true}
                         />
                         {!!errors.expDate && (<ControlLabel>{errors.expDate} </ControlLabel>
                         )}
