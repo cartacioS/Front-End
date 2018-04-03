@@ -49,7 +49,12 @@ class Login extends Component {
           this.props.history.push("/listings");
         })
         // TODO: do something actually pls
-        .catch(() => window.console.log("yo"));
+        .catch(error =>
+          this.setState({
+            isLoading: false,
+            errors: error.response.data.errors
+          })
+        );
     } else {
       this.setState({ errors, isLoading: false });
     }
@@ -62,6 +67,11 @@ class Login extends Component {
         <div>
           <h1>GroupUp!</h1>
           <p>Groupon User Matching Application</p>
+          {this.state.errors && (
+            <p style={{ textAlign: "center", fontStyle: "bold", color: "red" }}>
+              {this.state.errors}
+            </p>
+          )}
         </div>
         <form onSubmit={this.handleSubmit}>
           <FormGroup controlId="email" bsSize="large">
@@ -90,7 +100,7 @@ class Login extends Component {
           <LoaderButton
             block
             bsSize="large"
-           disabled={!this.validateForm()}
+            disabled={!this.validateForm()}
             type="submit"
             isLoading={this.state.isLoading}
             text="Login"

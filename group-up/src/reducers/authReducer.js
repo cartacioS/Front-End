@@ -9,6 +9,8 @@ function authReducer(state = defaultState, action) {
       return { jwt: "test" };
     case "ACCOUNT_LOGGED_IN":
       return { payload: action.response };
+    case "ACCOUNT_LOGIN_ERROR":
+      return { errors: action.response.errors };
     default:
       return state;
   }

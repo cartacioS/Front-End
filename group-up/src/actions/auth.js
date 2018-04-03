@@ -11,6 +11,11 @@ export const accountLoggedIn = response => ({
   type: "ACCOUNT_LOGGED_IN",
   response
 });
+
+export const accountLoginError = response => ({
+  type: "ACCOUNT_ERROR",
+  response
+});
 // action that can be called from a component
 export const registerAccount = ({
   email,
