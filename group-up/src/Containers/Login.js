@@ -48,7 +48,6 @@ class Login extends Component {
           this.setState({ isLoading: false });
           this.props.history.push("/listings");
         })
-        // TODO: do something actually pls
         .catch(error =>
           this.setState({
             isLoading: false,
