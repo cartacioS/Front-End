@@ -6,7 +6,7 @@ import LoaderButton from "../Components/LoaderButton";
 import "./RequestForm.css";
 import DatePicker from 'react-datepicker';
 import moment from 'moment';
-import 'react-datepicker/dist/react-datepicker.css';
+import './react-datepicker.css';
 class Request extends React.Component {
    
     state = {
@@ -38,6 +38,9 @@ class Request extends React.Component {
        }
         if(this.state.expDate === ""){
             errors.expDate = "This field is required.";
+        }
+        if(this.state.expDate.toDate().getTime() < new Date().getTime()) {
+            errors.expDate = "Please choose a valid future date."
         }
         if(this.state.groupSize === ""){
             errors.groupSize = "This field is required.";
@@ -105,7 +108,8 @@ class Request extends React.Component {
                         <DatePicker
                             selected = {this.state.expDate}
                             onChange = {this.handleDateChange}
-                            readOnly = {true}
+                            className = "form-control"
+                            dateFormat = "YYYY-MM-DD"
                         />
                         {!!errors.expDate && (<ControlLabel>{errors.expDate} </ControlLabel>
                         )}
