@@ -33,13 +33,15 @@ class Request extends React.Component {
 
    validateData() {
        const errors = {};
-       if(this.state.title === ""){
-           errors.title = "This field is required.";
-       }
+       let today = new Date();
+        today.setDate(today.getDate() - 1);
+        if(this.state.title === ""){
+            errors.title = "This field is required.";
+        }
         if(this.state.expDate === ""){
             errors.expDate = "This field is required.";
         }
-        if(this.state.expDate.toDate().getTime() < new Date().getTime()) {
+        if(this.state.expDate.toDate().getTime() < today.getTime()) {
             errors.expDate = "Please choose a valid future date."
         }
         if(this.state.groupSize === ""){
