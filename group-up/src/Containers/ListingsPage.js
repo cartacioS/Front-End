@@ -1,24 +1,22 @@
 import React, { Component } from "react";
-import { Button } from "react-bootstrap";
+import { Button, Grid, Row, Col } from "react-bootstrap";
 import "../Components/RequestButton.css";
+import { Container } from "semantic-ui-react";
 import RequestCard from "../Components/RequestCard";
 
-
+const flex = {
+  paddingTop: "5em",
+  display: "flex",
+  justifyContent: "space-between"
+};
 
 class ListingsPage extends Component {
   state = {};
   render() {
     return (
-      <div className="ListingsPage">
-        <div>
-          <Button className="RequestButton" href="request">
-
-            Create A Request
-          </Button>
-        </div>
-
-        <div style={{ paddingTop: "5em" }}>
-          {[1, 2, 3, 4].map(i => (
+      <Grid>
+        <Row>
+          {[...Array(100).keys()].map(i => (
             <RequestCard
               key={i}
               title="Some really good ass groupon deal"
@@ -29,8 +27,11 @@ class ListingsPage extends Component {
               numberMissing={420}
             />
           ))}
-        </div>
-      </div>
+        </Row>
+        <Button className="RequestButton" href="request">
+          Create A Request
+        </Button>
+      </Grid>
     );
   }
 }
