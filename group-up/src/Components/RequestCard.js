@@ -15,7 +15,7 @@ const RequestCard = ({
   groupSize,
   numberMissing
 }) => (
-  <Card>
+  <Card style={{ marginLeft: "1em" }}>
     <Card.Content>
       <Card.Header>{title}</Card.Header>
       <Card.Meta>
