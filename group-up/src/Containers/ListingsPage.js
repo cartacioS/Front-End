@@ -15,7 +15,7 @@ class ListingsPage extends Component {
   render() {
     return (
       <Grid>
-        <Row>
+        <Row style={{ paddingTop: "5em" }}>
           {[...Array(100).keys()].map(i => (
             <RequestCard
               key={i}
@@ -28,7 +28,11 @@ class ListingsPage extends Component {
             />
           ))}
         </Row>
-        <Button className="RequestButton" href="request">
+        <Button
+          className="RequestButton"
+          href="request"
+          style={{ position: "fixed" }}
+        >
           Create A Request
         </Button>
       </Grid>
