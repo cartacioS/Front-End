@@ -3,6 +3,17 @@ import { Navbar } from "react-bootstrap";
 import "./HeaderBar.css";
 
 class NavBarLoggedIn extends Component {
+
+   constructor(props) {
+      super (props);
+      this.handleClick = this.handleClick.bind(this);
+   }
+
+   handleClick() {
+      window.localStorage.jwtToken = "";
+   }
+
+
   render() {
     return (
       <div style={{ position: "fixed", width: "100%", zIndex: "1" }}>
@@ -31,7 +42,7 @@ class NavBarLoggedIn extends Component {
           </form>
 
           <div id="logOut">
-            <a href="/">Log out</a>
+            <a href="/" onClick={this.handleClick}>Log out</a>
           </div>
         </Navbar>
       </div>
