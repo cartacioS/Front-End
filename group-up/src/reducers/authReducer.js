@@ -11,6 +11,8 @@ function authReducer(state = defaultState, action) {
       return { payload: action.response };
     case "ACCOUNT_LOGIN_ERROR":
       return { errors: action.response.errors };
+    case "REQUEST_CREATED":
+      return {request: action.response};
     default:
       return state;
   }

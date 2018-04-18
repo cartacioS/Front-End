@@ -7,7 +7,11 @@ import "./RequestForm.css";
 import DatePicker from 'react-datepicker';
 import moment from 'moment';
 import './react-datepicker.css';
-class Request extends React.Component {
+import { createRequest } from "../actions/auth";
+import { connect } from "react-redux";
+import { PropTypes } from "prop-types";
+
+class RequestForm extends React.Component {
    
     state = {
         title: "",
@@ -71,7 +75,20 @@ class Request extends React.Component {
         } = this.state;
 
         if(isEmpty(errors)){
-            this.setState({isLoading: false});
+            this.setState({isLoading: true});
+            this.props.createRequest({
+                title,
+                expirationDate: expDate,
+                groupSize,
+                membersNeeded: countNeeded,
+                description
+            })
+            .then(() => {
+                this.props.history.push("/listings");
+                this.setState({ isLoading: false});
+            }).catch((e)=>{
+                console.log(e);
+            });
         }else{
             this.setState({errors, isLoading: false});
         }
@@ -161,9 +178,8 @@ class Request extends React.Component {
                     <LoaderButton
                     block
                     bsSize="large"
-                    disabled={!this.validateData()}
                     type="submit"
-                    isLoading={this.state.isLoading}
+                    isLoading={isLoading}
                     text="Create"
                     loadingText="Creating Request..."
                     style={{ color:"white", backgroundColor:"#369B00"}}
@@ -175,4 +191,11 @@ class Request extends React.Component {
    }
 }
 
-export default(Request);
+RequestForm.propTypes = {
+    createRequest: PropTypes.func.isRequired,
+    history: PropTypes.shape({
+      push: PropTypes.func.isRequired
+    }).isRequired
+  };
+
+export default connect(null, {createRequest})(RequestForm);
