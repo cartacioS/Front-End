@@ -16,6 +16,25 @@ export const accountLoginError = response => ({
   type: "ACCOUNT_ERROR",
   response
 });
+
+export const requestCreated = response => ({ 
+  type: "REQUEST_CREATED",
+  response
+})
+
+export const createRequest = ({
+  title,
+  expDate,
+  groupSize,
+  countNeeded,
+  description
+}) => dispatch =>
+  api.auth
+    .createRequest(title, expDate, groupSize, countNeeded, description)
+    .then(response => dispatch(requestCreated(response)));
+
+
+
 // action that can be called from a component
 export const registerAccount = ({
   email,

@@ -14,7 +14,9 @@ const api = {
         })
         .then(res => res.data),
     login: (email, password) =>
-      axios.post("users/login", { email, password }).then(res => res.data)
+      axios.post("users/login", { email, password }).then(res => res.data),
+    createRequest: (title, expirationDate, groupSize, membersNeeded, description) =>
+      axios.post("requests/create", { title, expirationDate, groupSize, membersNeeded, description}).then(res => res.data)
   }
 };
 
