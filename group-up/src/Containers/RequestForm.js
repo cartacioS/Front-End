@@ -12,6 +12,7 @@ import { connect } from "react-redux";
 import { PropTypes } from "prop-types";
 
 class RequestForm extends React.Component {
+<<<<<<< HEAD
   state = {
     title: "",
     expirationDate: moment(),
@@ -21,6 +22,29 @@ class RequestForm extends React.Component {
     isLoading: false,
     errors: {}
   };
+=======
+   
+    state = {
+        title: "",
+        expDate: moment(),
+        groupSize: "",
+        countNeeded: "",
+        description: "",
+        isLoading: false,
+        errors:{}
+    };
+
+    componentWillMount(){
+        if(typeof this.props.authReducer.payload == "string")
+            this.props.history.push("/");
+    }
+
+    handleChange = e => {
+        this.setState({
+            [e.target.id]: e.target.value
+        });
+    };    
+>>>>>>> c19775746b41a83e2fcdbe564aaef081b5427956
 
   handleChange = e => {
     this.setState({
@@ -99,6 +123,7 @@ class RequestForm extends React.Component {
     return (
       <div className="Request">
         <h1> Create Request </h1>
+<<<<<<< HEAD
         <form onSubmit={this.handleSubmit}>
           <FormGroup
             controlId="title"
@@ -182,6 +207,89 @@ class RequestForm extends React.Component {
             loadingText="Creating Request..."
             style={{ color: "white", backgroundColor: "#369B00" }}
           />
+=======
+        <form onSubmit={this.handleSubmit}> 
+                <FormGroup
+                    controlId="title"
+                    bsSize="large"
+                    validationState = {errors.title ? "error" : null}
+                    >
+                    <ControlLabel> Request Title </ControlLabel>
+                        <FormControl
+                            autoFocus
+                            placeholder="Enter Request Title"
+                            type="input"
+                            onChange={this.handleChange}
+                        />
+                        {!!errors.title && (<ControlLabel>{errors.title} </ControlLabel>
+                        )}
+                </FormGroup>
+                <FormGroup 
+                    controlId="expDate"
+                    bsSize="large"
+                    validationState = {errors.expDate ? "error" : null}
+                    >
+                    <ControlLabel> Expiration Date </ControlLabel>
+                        <DatePicker
+                            selected = {this.state.expDate}
+                            onChange = {this.handleDateChange}
+                            className = "form-control"
+                            dateFormat = "YYYY-MM-DD"
+                        />
+                        {!!errors.expDate && (<ControlLabel>{errors.expDate} </ControlLabel>
+                        )}
+                </FormGroup>
+                <FormGroup 
+                    controlId="groupSize"
+                    bsSize="large"
+                    validationState = {errors.groupSize ? "error" : null}
+                    >
+                    <ControlLabel> Group Size </ControlLabel>
+                        <FormControl
+                            autoFocus
+                            placeholder="Enter Group Size"
+                            type="input"
+                            onChange = {this.handleChange}
+                        />
+                        {!!errors.groupSize && (<ControlLabel>{errors.groupSize} </ControlLabel>
+                        )}
+                </FormGroup>
+                <FormGroup
+                    controlId="countNeeded"
+                    bsSize="large"
+                    validationState = {errors.countNeeded ? "error" : null}
+                    >
+                    <ControlLabel> Count Needed </ControlLabel>
+                        <FormControl
+                            autoFocus
+                            placeholder="Enter Count Needed"
+                            type="input"
+                            onChange = {this.handleChange}
+                        />
+                        {!!errors.countNeeded && (<ControlLabel>{errors.countNeeded} </ControlLabel>
+                        )}
+                </FormGroup>
+                <FormGroup
+                    controlId="description"
+                    bsSize="large"
+                    >
+                    <ControlLabel> Description (Optional) </ControlLabel>
+                        <FormControl
+                            autoFocus
+                            placeholder="Enter description"
+                            type="input"
+                        />
+                </FormGroup> 
+                    <LoaderButton
+                    block
+                    bsSize="large"
+                    type="submit"
+                    isLoading={isLoading}
+                    text="Create"
+                    loadingText="Creating Request..."
+                    style={{ color:"white", backgroundColor:"#369B00"}}
+                 />
+>>>>>>> c19775746b41a83e2fcdbe564aaef081b5427956
         </form>
       </div>
     );
