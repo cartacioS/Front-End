@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 import React from "react";
 import { FormGroup, ControlLabel, FormControl } from "react-bootstrap";
 import { isEmpty } from "lodash";
@@ -9,16 +8,6 @@ import { PropTypes } from "prop-types";
 import "../Components/RequestButton.css";
 import LoaderButton from "../Components/LoaderButton";
 import "./RequestForm.css";
-=======
-import React, { Component } from "react";
-import { FormGroup, ControlLabel, FormControl } from "react-bootstrap";
-import { isEmpty } from "lodash";
-import "../Components/RequestButton.css";
-import LoaderButton from "../Components/LoaderButton";
-import "./RequestForm.css";
-import DatePicker from "react-datepicker";
-import moment from "moment";
->>>>>>> 6b1159a... wow im a god. fixed the issue with axios not setting jwt token
 import "./react-datepicker.css";
 import { createRequest } from "../actions/auth";
 
@@ -32,7 +21,6 @@ class RequestForm extends React.Component {
     isLoading: false,
     errors: {}
   };
-<<<<<<< HEAD
   handleChange = e => {
     this.setState({
       [e.target.id]: e.target.value
@@ -71,47 +59,6 @@ class RequestForm extends React.Component {
     return errors;
   }
 
-=======
-
-  handleChange = e => {
-    this.setState({
-      [e.target.id]: e.target.value
-    });
-  };
-
-  handleDateChange = date => {
-    this.setState({
-      expirationDate: date
-    });
-  };
-
-  validateData() {
-    const errors = {};
-    const today = new Date();
-    today.setDate(today.getDate() - 1);
-    if (this.state.title === "") {
-      errors.title = "This field is required.";
-    }
-    if (this.state.expirationDate === "") {
-      errors.expirationDate = "This field is required.";
-    }
-    if (this.state.expirationDate.toDate().getTime() < today.getTime()) {
-      errors.expirationDate = "Please choose a valid future date.";
-    }
-    if (this.state.groupSize === "") {
-      errors.groupSize = "This field is required.";
-    } else if (this.state.groupSize < 2) {
-      errors.groupSize = "Please enter a group size of at least 2.";
-    }
-    if (this.state.membersNeeded === "") {
-      errors.membersNeeded = "This field is required.";
-    } else if (this.state.membersNeeded < 1) {
-      errors.membersNeeded = "Please enter a group size of at least 1.";
-    }
-    return errors;
-  }
-
->>>>>>> 6b1159a... wow im a god. fixed the issue with axios not setting jwt token
   handleSubmit = e => {
     e.preventDefault();
     const errors = this.validateData();
@@ -234,10 +181,6 @@ class RequestForm extends React.Component {
             loadingText="Creating Request..."
             style={{ color: "white", backgroundColor: "#369B00" }}
           />
-<<<<<<< HEAD
-          ======= >>>>>>> e4948af... forgot somet things
-=======
->>>>>>> 6b1159a... wow im a god. fixed the issue with axios not setting jwt token
         </form>
       </div>
     );
@@ -251,11 +194,7 @@ RequestForm.propTypes = {
   }).isRequired
 };
 
-<<<<<<< HEAD
 function mapToState(state) {
   return state;
 }
 export default connect(mapToState, { createRequest })(RequestForm);
-=======
-export default connect(null, { createRequest })(RequestForm);
->>>>>>> 6b1159a... wow im a god. fixed the issue with axios not setting jwt token
