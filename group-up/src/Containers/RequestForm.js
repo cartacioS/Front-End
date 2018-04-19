@@ -21,6 +21,12 @@ class RequestForm extends React.Component {
     isLoading: false,
     errors: {}
   };
+
+  componentWillMount(){
+    if(typeof this.props.authReducer.payload == "string")
+      this.props.history.push("/");
+  }
+
   handleChange = e => {
     this.setState({
       [e.target.id]: e.target.value
