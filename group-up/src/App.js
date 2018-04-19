@@ -14,7 +14,7 @@ class App extends Component {
         {window.localStorage.getItem("jwtToken") ? (
           <NavBarLoggedIn />
         ) : (
-          <navBarBlank />
+          <NavBarBlank />
         )}
         <Routes location={this.props.location} />
       </div>
