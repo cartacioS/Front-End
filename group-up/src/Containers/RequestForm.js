@@ -21,6 +21,10 @@ class RequestForm extends React.Component {
     isLoading: false,
     errors: {}
   };
+<<<<<<< HEAD
+=======
+
+>>>>>>> 4795a06... whoops
   handleChange = e => {
     this.setState({
       [e.target.id]: e.target.value
@@ -194,7 +198,11 @@ RequestForm.propTypes = {
   }).isRequired
 };
 
+<<<<<<< HEAD
 function mapToState(state) {
   return state;
 }
 export default connect(mapToState, { createRequest })(RequestForm);
+=======
+export default connect(null, { createRequest })(RequestForm);
+>>>>>>> 4795a06... whoops
