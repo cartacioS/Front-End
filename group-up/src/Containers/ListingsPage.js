@@ -1,17 +1,21 @@
 import React, { Component } from "react";
-import { Button, Grid, Row, Col } from "react-bootstrap";
+import { Button, Grid, Row} from "react-bootstrap";
 import "../Components/RequestButton.css";
-import { Container } from "semantic-ui-react";
 import RequestCard from "../Components/RequestCard";
-
+import { connect } from "react-redux";
 const flex = {
   paddingTop: "5em",
   display: "flex",
   justifyContent: "space-between"
 };
 
-class ListingsPage extends Component {
+class ListingsPage extends React.Component {
   state = {};
+  
+  componentWillMount(){
+    if(typeof this.props.authReducer.payload == "string")
+      this.props.history.push("/");
+  }
   render() {
     return (
       <Grid>
@@ -40,4 +44,8 @@ class ListingsPage extends Component {
   }
 }
 
-export default ListingsPage;
+function mapToState(state){
+  return state;
+}
+
+export default connect(mapToState, {})(ListingsPage);

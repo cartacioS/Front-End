@@ -23,6 +23,11 @@ class RequestForm extends React.Component {
         errors:{}
     };
 
+    componentWillMount(){
+        if(typeof this.props.authReducer.payload == "string")
+            this.props.history.push("/");
+    }
+
     handleChange = e => {
         this.setState({
             [e.target.id]: e.target.value
@@ -116,7 +121,6 @@ class RequestForm extends React.Component {
                         />
                         {!!errors.title && (<ControlLabel>{errors.title} </ControlLabel>
                         )}
-                    { console.log(this.state.title)}
                 </FormGroup>
                 <FormGroup 
                     controlId="expDate"
@@ -132,7 +136,6 @@ class RequestForm extends React.Component {
                         />
                         {!!errors.expDate && (<ControlLabel>{errors.expDate} </ControlLabel>
                         )}
-                    { console.log(this.state.expDate) }
                 </FormGroup>
                 <FormGroup 
                     controlId="groupSize"
@@ -198,4 +201,7 @@ RequestForm.propTypes = {
     }).isRequired
   };
 
-export default connect(null, {createRequest})(RequestForm);
+  function mapToState(state){
+      return state;
+  }
+export default connect(mapToState, {createRequest})(RequestForm);

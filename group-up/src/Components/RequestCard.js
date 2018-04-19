@@ -1,5 +1,5 @@
 import React from "react";
-import { Card, Container } from "semantic-ui-react";
+import { Card } from "semantic-ui-react";
 import "../../node_modules/semantic-ui-css/semantic.min.css";
 
 const col = {
