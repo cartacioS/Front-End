@@ -1,8 +1,10 @@
 import React, { Component } from "react";
-import { Button, Grid, Row} from "react-bootstrap";
+import { Link } from "react-router-dom";
+import { Button, Grid, Row } from "react-bootstrap";
 import "../Components/RequestButton.css";
 import RequestCard from "../Components/RequestCard";
 import { connect } from "react-redux";
+
 const flex = {
   paddingTop: "5em",
   display: "flex",
@@ -11,9 +13,9 @@ const flex = {
 
 class ListingsPage extends React.Component {
   state = {};
-  
-  componentWillMount(){
-    if(typeof this.props.authReducer.payload == "string")
+
+  componentWillMount() {
+    if (typeof this.props.authReducer.payload === "string")
       this.props.history.push("/");
   }
   render() {
@@ -32,19 +34,17 @@ class ListingsPage extends React.Component {
             />
           ))}
         </Row>
-        <Button
-          className="RequestButton"
-          href="request"
-          style={{ position: "fixed" }}
-        >
-          Create A Request
-        </Button>
+        <Link to="/request">
+          <Button className="RequestButton" style={{ position: "fixed" }}>
+            Create A Request
+          </Button>
+        </Link>
       </Grid>
     );
   }
 }
 
-function mapToState(state){
+function mapToState(state) {
   return state;
 }
 
