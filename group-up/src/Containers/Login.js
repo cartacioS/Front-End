@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import { FormGroup, FormControl, ControlLabel } from "react-bootstrap";
+import { PropTypes } from "prop-types";
 import { connect } from "react-redux";
 import { isEmpty } from "lodash";
 import { isEmail } from "validator";
@@ -128,5 +129,9 @@ class Login extends Component {
     );
   }
 }
+
+Login.propTypes = {
+  login: PropTypes.func.isRequired
+};
 
 export default connect(null, { login })(Login);
